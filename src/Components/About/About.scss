@@ -96,13 +96,10 @@ $shadow: 0 10px 10px 5px #aaa;
     transform: rotateZ(45deg);
     position: absolute;
     left: -600px;
-    z-index: 0;
+    z-index: -1;
     animation-name: card;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    @include respond(tab-land) {
-        z-index: -1;
-    }
 }
 
 @keyframes card {

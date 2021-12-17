@@ -6,11 +6,7 @@ function About() {
         const card = document.getElementById('card')
         const value = window.scrollY
 
-        if (parseInt(card.style.left) >= 100) {
-            card.style.left = 99 + 'px'
-        } else {
-            card.style.left = value * 0.5 - 300 + 'px'          
-        }
+        card.style.left = value * 0.5 - 300 + 'px'
     })
     
     return (

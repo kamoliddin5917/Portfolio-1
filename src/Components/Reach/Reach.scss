@@ -1,0 +1,124 @@
+$liteBrown: rgb(160, 0, 0);
+$grey: #808080;
+$liteBlue: #ADD8E6;
+$darkBlue: #00008B;
+$s: #8a3ab9;
+$shadow: 0 10px 10px 5px #aaa;
+@import '../../mixins/mixins.scss';
+
+#reach {
+    height: 120px;
+}
+
+.reach_container {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .reach_line {
+        width: 100px;
+        height: 2px;
+        background-color: $s;
+        margin: 20px 0;
+        box-shadow: $shadow;
+    }
+    .span_wrapper {
+        color: $s;
+    }
+    h2 {
+        font-size: 40px;
+    }
+}
+
+.reach_wrapper {
+    width: 600px;
+    min-height: 200px;
+    box-shadow: $shadow;
+    border-radius: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: #fff;
+    @include respond(phone) {
+        width: 400px;
+    }
+}
+
+.link_me {
+    width: 220px;
+    height: 20px;
+    padding: 10px;
+    text-decoration: none;
+    margin: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-color: #0088CC;
+    &:nth-child(2) {
+        background-color: #cd486b;
+    }
+    &:nth-child(3) {
+        background-color: #424242;
+    }
+    &:nth-child(4) {
+        background-color: #a1e23d;
+    }
+    &:nth-child(5) {
+        background-color: $liteBlue;
+    }
+}
+
+.link_img {
+    width: 20px;
+    margin-right: 5px;
+    padding: 5px 5px 5px 0;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.link_bkg_img {
+    width: 256px;
+    position: absolute;
+    animation-name: earth;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes earth {
+    0% {
+        left: 40px;
+        z-index: 0;
+    }
+    25% {
+        z-index: 0;
+    }
+    50% {
+        left: 85%;
+        z-index: 2;
+    }
+    100% {
+        left: 40px;
+        z-index: 2;
+    }
+}
+
+@include respond(tab-land) {
+    @keyframes earth {
+        0% {
+            left: -50%;
+        }
+        50% {
+            left: 100%;
+        }
+        100% {
+            left: -50%;
+        }
+    }
+}

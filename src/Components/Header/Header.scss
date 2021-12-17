@@ -1,0 +1,141 @@
+$liteBrown: rgb(160, 0, 0);
+$grey: #808080;
+$liteBlue: #ADD8E6;
+$s: #8a3ab9;
+$shadow: 0 0 30px 5px #aaa;
+@import '../../mixins/mixins.scss';
+
+header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    box-shadow: $shadow;
+    button {
+        display: none;
+        margin-right: 40px;
+    }
+    @include respond(phone) {
+        button {
+            display: block;
+            img {
+                width: 40px;
+            }
+        }
+    }
+}
+
+.nav_content_wrapper {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo_img {
+    width: 80px;
+    margin-left: 20px;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    @include respond(phone) {
+        width: 200px;
+        min-height: 100vh;
+        height: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background-color: #fff;
+        box-shadow: $shadow;
+    }
+}
+
+.nav_link {
+    text-decoration: none;
+    color: $grey;
+    border: 2px solid $grey;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 10px;
+    span {
+        color: #000;
+    }
+    &:hover {
+        background-color: $grey;
+        color: #fff;
+        border: 2px solid #fff;
+        box-shadow: $shadow;
+        span {
+            color: #fff;
+        }
+    }
+    @include respond(phone) {
+        padding: 5px;
+    }
+}
+
+.nav_list_item {
+    &:nth-child(2) {
+        .nav_link {
+            color: #000;
+            span {
+                color: $liteBrown;
+            }
+            border: 2px solid $liteBrown;
+            &:hover {
+                color: #fff;
+                background-color: $liteBrown;
+                box-shadow: 0 0 20px 2px $liteBrown;
+                border: 2px solid #fff;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+        
+    }
+    &:nth-child(3) {
+        .nav_link {
+            border: 2px solid $s;
+            margin-right: 30px;
+            color: #000;
+            span {
+                color: $s;
+            }
+            &:hover {
+                color: #fff;
+                background-color: $s;
+                border: 2px solid #fff;
+                box-shadow: 0 0 20px 2px $s;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    @include respond(phone) {
+        margin: 30px 0;   
+        &:nth-child(3) {
+            .nav_link {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.nav_list--active {
+    display: flex;
+}

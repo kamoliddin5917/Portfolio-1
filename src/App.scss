@@ -1,0 +1,33 @@
+$grey: #808080;
+@import './mixins/mixins.scss';
+
+*,
+*::before, 
+*::after {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+    background-color: inherit;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: $grey;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+html::-webkit-scrollbar-track {
+    border: 1px solid $grey;
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback';
+    font-weight: 900;
+    overflow-x: hidden;
+}
+

@@ -1,0 +1,118 @@
+$liteBrown: rgb(160, 0, 0);
+$grey: #808080;
+$liteBlue: #ADD8E6;
+$s: #8a3ab9;
+$shadow: 0 10px 10px 5px #aaa;
+@import '../../mixins/mixins.scss';
+
+#about {
+    height: 130px;
+}
+
+.about {
+    width: 100vw;
+    min-height: 500px;
+    position: relative;
+}
+
+.about_line {
+    width: 100px;
+    height: 2px;
+    background-color: $grey;
+    margin-bottom: 20px;
+    box-shadow: $shadow;
+}
+
+.about_wrapper {
+    margin: 0 auto;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 20px;
+    h2 {
+        margin: 20px 0;
+        font-size: 40px;
+    }
+
+    span {
+        color: $grey;
+    }
+
+    button {
+        background-color: inherit;
+        border: none;
+        margin-top: 60px;
+        a {
+            font-size: 15px;
+            font-weight: bold;
+            color: $liteBrown;
+            text-decoration: none;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid $liteBrown;
+            &:hover {
+                background-color: $liteBrown;
+                color: #fff;
+                border: 2px solid #fff;
+                box-shadow: 0 0 10px 2px $liteBrown;
+            }
+        }
+    }
+    @include respond(tab-land) {
+        width: 600px;
+    }
+    @include respond(phone) {
+        width: 350px;
+        h2 {
+            font-size: 35px;
+        }
+    }
+}
+
+.about_section {
+    padding: 40px;
+    box-shadow: $shadow;
+    border-radius: 20px;
+    background-color: #fff;
+    section {
+        margin-left: 20px;
+    }
+    p {
+        font-size: 12px;
+    }
+    span {
+        color: $s;
+    }
+    @include respond(tab-land) {
+
+    }
+}
+
+.info_img {
+    width: 256px;
+    transform: rotateZ(45deg);
+    position: absolute;
+    left: -600px;
+    z-index: 0;
+    animation-name: card;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    @include respond(tab-land) {
+        z-index: -1;
+    }
+}
+
+@keyframes card {
+    0% {
+        top: 10px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 10px;
+    }
+}

@@ -1,0 +1,137 @@
+$liteBrown: rgb(160, 0, 0);
+$grey: #808080;
+$liteBlue: #ADD8E6;
+$s: #8a3ab9;
+$shadow: 0 10px 10px 5px #aaa;
+@import '../../mixins/mixins.scss';
+
+main {
+    margin-top: 60px;
+}
+
+.main_container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 220px;
+    @include respond(tab-land) {
+        width: 900px;
+    }
+    @include respond(tab-port) {
+        width: 600px;
+    }
+    @include respond(phone) {
+        width: 350px;
+    }
+}
+.main_container_wrapper {
+    width: 1260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    h1 {
+        width: 500px;
+        font-size: 80px;
+        position: relative;
+        span {
+            color: $grey;
+            &:nth-child(2) {
+                color: $liteBrown;
+            }
+            &:nth-child(3) {
+                color: $s;
+            }
+        }
+    }
+    img {
+        width: 500px;
+        position: relative;
+    }
+    button {
+        position: relative;
+        bottom: -150px;
+        background-color: inherit;
+        border: none;
+        font-weight: bold;
+        a {
+            font-weight: bold;
+            font-size: 15px;
+            color: $grey;
+            border: 2px solid $grey;
+            border-radius: 15px;
+            padding: 15px;
+            text-decoration: none;
+            &:hover {
+                background-color: $grey;
+                color: #fff;
+                border: 2px solid #fff;
+                box-shadow: 0 0 10px 2px $grey;
+            }
+        }
+    }
+    @include respond(tab-land) {
+        width: 900px;
+        h1 {
+            width: 300px;
+            font-size: 60px;
+        }
+        img {
+            width: 300px;
+        }
+        button {
+            bottom: -50px;
+        }
+    }
+    @include respond(tab-port) {
+        flex-direction: column;
+        width: 600px;
+        h1 {
+            width: 400px;
+            text-align: center;
+            font-size: 70px;
+        }
+        img {
+            width: 400px;
+        }
+        button {
+            bottom: 0;
+        }
+    }
+    @include respond(phone) {
+        flex-direction: column;
+        width: 350px;
+        h1 {
+            width: 350px;
+            font-size: 60px;
+        }
+        img {
+            width: 350px;
+        }
+        button {
+            bottom: -5px;
+            a {
+                padding: 5px;
+            }
+        }
+    }
+}
+
+.main_span {
+    width: 1250px;
+    height: 2px;
+    background-color: $grey;
+    box-shadow: $shadow;    
+    @include respond(tab-land) {
+        width: 900px;
+    }
+    @include respond(tab-port) {
+        width: 700px;
+    }
+    @include respond(phone) {
+        width: 350px;
+    }
+}
